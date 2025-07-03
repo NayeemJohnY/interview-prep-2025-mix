@@ -5,7 +5,6 @@ li = ["SBI$22$", "HDFC$8$", "KOTAK$122$", "ICICI$31$", "RBI$50$"]
 out = sorted(li, key=lambda x: int(x.split('$')[1]))
 print(out)
 
-
 # Problem 2
 # Solution 1
 input = "All that glitters is not gold"
