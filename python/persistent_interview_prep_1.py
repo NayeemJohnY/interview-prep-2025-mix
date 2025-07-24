@@ -87,11 +87,12 @@ input= ["cat", "dog", "bird", "lion", "ant", "elephant"]
 word_count_map = {}
 for word in input:
     length = len(word)
-    if length in word_count_map:
-        word_count_map[length].append(word)
-    else:
-        word_count_map[length] = [word]
-print(word_count_map)
+    word_count_map[length] = word_count_map.get(length, []) + [word]
+    # if length in word_count_map:
+    #     word_count_map[length].append(word)
+    # else:
+    #     word_count_map[length] = [word]
+print("word_count_map: ", word_count_map)
 
 # Solution 2
 from collections import defaultdict

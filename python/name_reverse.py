@@ -6,6 +6,7 @@ for i in range(len(names_list)-1, -1, -1):
     output += names_list[i] + ' '
 
 print('output', output)
+print("".join(name[::-1]))
 
 
 # Find the 2nd max

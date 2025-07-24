@@ -10,3 +10,9 @@ for i in range(len(s)):
 print('Letters Count', letters)
 print('Numbers Count', numbers)
 print('SpecialChars Count', specialchars)
+
+a = 10
+b =20
+a, b = b,a
+print(a)
+print(b)
