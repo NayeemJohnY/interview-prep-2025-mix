@@ -1,4 +1,4 @@
-import java.util.regex.Pattern;
+package questions;
 
 public class StringCount {
 
