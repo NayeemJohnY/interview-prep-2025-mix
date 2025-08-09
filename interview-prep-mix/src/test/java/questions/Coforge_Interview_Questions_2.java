@@ -3,6 +3,7 @@ package questions;
 import java.io.File;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -145,6 +146,23 @@ public class Coforge_Interview_Questions_2 {
         for (Map.Entry<Integer, Integer> entry : expectedDenominationsCountMap.entrySet()) {
             Assert.assertEquals(entry.getValue(), expectedDenominationsCountMap.get(entry.getKey()));
         }
+    }
+
+    @Test(dataProvider = "MoneyProvider")
+    public void testATMDistribution_updated_logic(int input, Map<Integer, Integer> expectedDenominationsCountMap) {
+        int[] denominations = { 100, 200, 500, 50, 20, 10, 5 };
+        Arrays.sort(denominations);
+        HashMap<Integer, Integer> denominationsCountMap = new HashMap<>();
+        for (int i = denominations.length - 1; i >= 0 && input > 0; i--) {
+            if (input >= denominations[i]) {
+                // int count = input / denominations[i];
+                denominationsCountMap.put(denominations[i], input / denominations[i]);
+                // input = input - (denominations[i] * count);
+                input %= denominations[i];
+            }
+        }
+        System.out.println(denominationsCountMap);
+        Assert.assertEquals(input == 0 ? denominationsCountMap : Collections.emptyMap(), expectedDenominationsCountMap);
     }
 
     @DataProvider(name = "MoneyProvider")

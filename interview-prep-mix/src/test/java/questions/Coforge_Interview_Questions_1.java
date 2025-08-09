@@ -42,7 +42,7 @@ class Reporting {
 
 }
 
-class Test extends Reporting implements BrowserManager {
+class Test1 extends Reporting implements BrowserManager {
 
     private String browser = CHROME;
 
